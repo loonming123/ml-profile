@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Gwee Ming Loon",
+  title: "Gwee Ming Loon | Platform Engineer",
   description:
     "Platform Engineer and DevOps Engineer based in Kuala Lumpur, focused on cloud infrastructure, reliability, and automation.",
 };
@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

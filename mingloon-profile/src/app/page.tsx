@@ -18,15 +18,35 @@ const statBlocks = [
   },
 ];
 
+const impactCards = [
+  {
+    title: "Platform-first mindset",
+    body: "Build infrastructure that is repeatable, observable, and safe to evolve under pressure.",
+  },
+  {
+    title: "Production calm",
+    body: "Reduce noise, shorten incident time, and make the next deploy easier than the last one.",
+  },
+  {
+    title: "Cloud-native execution",
+    body: "Design for Kubernetes, managed services, and automation that survives real traffic patterns.",
+  },
+];
+
 export default function Home() {
   return (
     <main className="page-shell">
       <section className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">Personal profile</p>
+          <div className="hero-kicker">
+            <p className="eyebrow">Personal profile</p>
+            <span className="status-pill">Open to platform and SRE work</span>
+          </div>
+
           <h1>{personalProfile.name}</h1>
           <p className="role">{personalProfile.role}</p>
           <p className="bio">{personalProfile.bio}</p>
+
           <div className="cta-row">
             <a
               className="primary-link"
@@ -53,23 +73,44 @@ export default function Home() {
               Email
             </a>
           </div>
+
+          <div className="micro-metrics" aria-label="Quick highlights">
+            <div>
+              <span className="micro-label">Location</span>
+              <strong>Kuala Lumpur</strong>
+            </div>
+            <div>
+              <span className="micro-label">Domain</span>
+              <strong>Fintech + Brokerage</strong>
+            </div>
+            <div>
+              <span className="micro-label">Style</span>
+              <strong>Automate first</strong>
+            </div>
+          </div>
         </div>
 
         <aside className="hero-card" aria-label="Profile summary">
-          <div className="avatar-ring">
-            <div className="avatar-fallback" aria-hidden="true">
-              ML
+          <div className="avatar-panel">
+            <div className="avatar-ring" aria-hidden="true">
+              <div className="avatar-fallback">ML</div>
+            </div>
+            <div className="avatar-copy">
+              <p className="avatar-name">{personalProfile.name}</p>
+              <p className="avatar-role">{personalProfile.role}</p>
             </div>
           </div>
+
           <div className="summary-stack">
-            <div>
+            <div className="summary-block">
               <p className="summary-label">Education</p>
               <p className="summary-value">{personalProfile.education.degree}</p>
               <p className="summary-meta">
                 {personalProfile.education.school} · {personalProfile.education.period}
               </p>
             </div>
-            <div>
+
+            <div className="summary-block">
               <p className="summary-label">Certifications</p>
               <ul className="compact-list">
                 {personalProfile.certifications.map((item) => (
@@ -91,9 +132,26 @@ export default function Home() {
         ))}
       </section>
 
+      <section className="impact-band">
+        {impactCards.map((card) => (
+          <article key={card.title} className="impact-card">
+            <p className="impact-kicker">Principle</p>
+            <h2>{card.title}</h2>
+            <p>{card.body}</p>
+          </article>
+        ))}
+      </section>
+
       <section className="content-grid">
         <article className="panel">
-          <h2>Skills</h2>
+          <div className="section-heading">
+            <div>
+              <p className="section-kicker">Capabilities</p>
+              <h2>Skills</h2>
+            </div>
+            <p>Infrastructure, automation, and observability across cloud-native systems.</p>
+          </div>
+
           <div className="skill-groups">
             {personalProfile.skills.map((group) => (
               <div key={group.category} className="skill-group">
@@ -111,7 +169,14 @@ export default function Home() {
         </article>
 
         <article className="panel">
-          <h2>Experience</h2>
+          <div className="section-heading">
+            <div>
+              <p className="section-kicker">Journey</p>
+              <h2>Experience</h2>
+            </div>
+            <p>Production delivery, platform migrations, and recovery work in regulated environments.</p>
+          </div>
+
           <div className="timeline">
             {experiencesData.map((job) => (
               <section key={`${job.company}-${job.period}`} className="timeline-item">
@@ -133,14 +198,24 @@ export default function Home() {
         </article>
       </section>
 
-      <section className="panel">
+      <section className="panel projects-panel">
         <div className="section-heading">
-          <h2>Projects</h2>
-          <p>Selected infrastructure and platform work.</p>
+          <div>
+            <p className="section-kicker">Selected work</p>
+            <h2>Projects</h2>
+          </div>
+          <p>Infrastructure and platform work that maps directly to business reliability.</p>
         </div>
+
         <div className="project-grid">
-          {projectsData.map((project) => (
+          {projectsData.map((project, index) => (
             <article key={project.title} className="project-card">
+              <div className="project-topline">
+                <span className="project-index">0{index + 1}</span>
+                <span className="project-arrow" aria-hidden="true">
+                  ↗
+                </span>
+              </div>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
               <div className="chip-row">
