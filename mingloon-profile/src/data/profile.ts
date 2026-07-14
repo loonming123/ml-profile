@@ -129,12 +129,18 @@ export const projectsData: Project[] = [
     title: "AWS EKS Platform Deployment",
     description: "Designed and provisioned secure Kubernetes platforms on AWS EKS using Terraform and OpenTofu. Implemented secure workload access through IRSA and enforced strict Infrastructure-as-Code practices.",
     tags: ["AWS EKS", "Terraform", "OpenTofu", "IRSA", "Kubernetes"],
-    link: "#" // 在这里填入你想展示的具体链接或留空
+    link: "#"
   },
   {
-    title: "Enterprise Kafka Platform (Amazon MSK)",
-    description: "Provisioned and managed Amazon MSK clusters. Integrated Prometheus JMX Exporter with Grafana to establish robust monitoring and rapid troubleshooting capabilities for enterprise Kafka workloads.",
-    tags: ["Amazon MSK", "Kafka", "Prometheus", "Grafana", "Observability"],
+    title: "Global MSK (Enterprise Messaging Backbone)",
+    description: "Architected and managed a centralized Amazon MSK platform serving as the unified messaging backbone for the entire department, hosting all Kafka-dependent business workloads. Implemented strict topic/consumer governance workflows via Jira and Lark, and integrated Prometheus JMX Exporter for comprehensive observability.",
+    tags: ["Amazon MSK", "Kafka", "Platform Governance", "Prometheus", "Grafana"],
+    link: "#"
+  },
+  {
+    title: "Distributed Observability Platform",
+    description: "Engineered a highly scalable, centralized observability stack utilizing Loki-distributed and Mimir-distributed. Designed to aggregate, index, and analyze high-throughput logs and metrics across 80+ production MT (MetaTrader) servers, drastically reducing troubleshooting time for critical trading infrastructure.",
+    tags: ["Loki-Distributed", "Mimir-Distributed", "Observability", "Log Aggregation", "MetaTrader"],
     link: "#"
   },
   {
