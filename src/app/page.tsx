@@ -1,4 +1,5 @@
 import { personalProfile, experiencesData, projectsData } from "@/data/profile";
+import { ProfileMotion } from "@/components/ProfileMotion";
 
 const statBlocks = [
   {
@@ -35,7 +36,8 @@ const impactCards = [
 
 export default function Home() {
   return (
-    <main className="page-shell">
+    <ProfileMotion>
+      <div className="page-shell">
       <section className="hero">
         <div className="hero-copy">
           <div className="hero-kicker">
@@ -229,6 +231,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-    </main>
+      </div>
+    </ProfileMotion>
   );
 }
